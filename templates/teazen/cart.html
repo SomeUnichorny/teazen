@@ -1,0 +1,72 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-2 mb-5">
+  <div class="row">
+    <div class="h1">
+      <div class="title mt-5">
+        <span>
+          КОРЗИНА
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class='container'>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Товар</th>
+                <th scope="col">Наименование</th>
+                <th scope="col">Цена</th>
+                <th scope="col">Количество</th>
+                <th scope="col">Итого</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order_item in order_items %}
+                <tr>
+                    <td><img src='{{ order_item.item.image.url }}' width="90px"></td>
+                    <td>{{ order_item.item.name }}</td>
+                    <td>{{ order_item.item.price }}₽</td>
+                    <td> 
+                      <a href="{% url 'remove_from_cart' order_item.item.id %}" class="btn btn-sm btn-outline-dark">-</a>
+                      {{ order_item.quantity }}
+                      <a href="{% url 'add_to_cart' order_item.item.id %}" class="btn btn-sm btn-outline-dark">+</a>
+                  </td>
+                  <td>{{ order_item.get_total_item_price|floatformat:0 }}₽</td>
+              </tr>
+          {% empty %}
+              <tr>
+                  <td colspan="5">Корзина пуста</td>
+              </tr>
+            </tbody>
+          {% endfor %}
+          {% if total > 1 %}
+          <tfoot>
+            <tr>
+                <td colspan="4" align="right"><strong>Всего</strong></td>
+                <td>{{ total }}₽</td>
+            </tr>
+        </tfoot>
+        {% else %}
+        <tfoot>
+          <tr>
+              <td colspan="4" align="right"><strong>Всего</strong></td>
+              <td>0₽</td>
+          </tr>
+      </tfoot>
+      {% endif %}
+  </table>
+</div>
+
+<div class="container mt-5 mb-5">
+  <div class="row mx-auto col-3 col-md-3 col-sm-6" >
+<a class="btn btn-outline-dark text-center" href=" {% url 'create_order' %}" role="button">Перейти к оформлению</a>
+</div>
+</div>
+{% endblock %}
+

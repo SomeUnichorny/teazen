@@ -1,0 +1,217 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+   
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-6 col-12 ">
+        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src=" {% static 'img/s1s1.jpg' %}" alt="...">
+              <div class="carousel-caption ">
+                <h5>Добро пожаловать! </h5>
+                <p>У нас вы найдете самый широкий выбор чая высочайшего качества.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src=" {% static 'img/s1s2.jpg' %}" alt="...">
+              <div class="carousel-caption ">
+                <h5> Мы тщательно подбираем каждый вид чая.</h5>
+                <p>У нас вы найдете чай из разных стран и регионов, таких как Китай, Япония, Индия, Шри-Ланка и многих других.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src=" {% static 'img/s1s3.jpg' %}" alt="...">
+              <div class="carousel-caption">
+                <h5>Мы гарантируем, что наш чай свежий, ароматный и вкусный. </h5>
+                <p>Приятного выбора!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-12 d-md-block">
+        <ul class="list-unstyled">
+          <li class="">
+            <div id="carouselExampleControls2" class="carousel slide d-none d-md-block " data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a href="{% url 'black_tea' %}"><img src=" {% static 'img/s2s1.jpg' %}" class="d-block w-100" alt="..."></a>
+                </div>
+                <div class="carousel-item">
+                  <a href="{% url 'fruit_tea' %}"><img src=" {% static 'img/s2s2.jpg' %}"alt="..."></a>
+                </div>
+                <div class="carousel-item">
+                  <a href="{% url 'black_tea' %}"><img src=" {% static 'img/s2s3.jpg' %}" class="d-block w-100" alt="..."></a>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2"
+                data-bs-slide="prev">
+                <span aria-hidden="true"><img src=" {% static 'img/left.png' %}" alt=""></span>
+                <span class="visually-hidden">Предыдущий</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2"
+                data-bs-slide="next">
+                <span aria-hidden="true"><img src=" {% static 'img/right.png' %}" alt=""></span>
+                <span class="visually-hidden">Следующий</span>
+              </button>
+            </div>
+          </li>
+          <li class="mt-4"><img src=" {% static 'img/dzen.jpg' %}" alt=""></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="teas container mt-5 mb-5">
+    <div class="row text-center justify-content-center">
+      <div class=" col-lg-3 col-sm-6 col-md-6">
+        <div class="product">
+          <div class="prod-thumb">
+              <a href = {% url 'black_tea' %}>
+              <img src=" {% static 'img/black_tea.png' %}" class="mt-5" alt=""></a>
+              <a href = {% url 'black_tea' %}>
+              <h1 class="mt-3">Черный</h1>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+      <div class=" col-lg-3 col-sm-6 col-md-6">
+        <a href = {% url 'green_tea' %}><img src=" {% static 'img/green_tea.png' %}" class="mt-5" alt=""></a>
+        <a href = {% url 'green_tea' %}>
+          <h1 class="text-center mt-3">Зеленый</h1>
+        </a>
+      </div>
+      <div class=" col-lg-3 col-sm-6 col-md-6">
+        <a href = {% url 'flower_tea' %}><img src=" {% static 'img/flow_tea.png' %}" class="mt-5" alt=""></a>
+        <a href = {% url 'fruit_tea' %}>
+          <h1 class="mt-3">Цветочный</h1>
+        </a>
+      </div>
+      <div class=" col-lg-3 col-sm-6 col-md-6">
+        <a href = {% url 'fruit_tea' %}><img src=" {% static 'img/fruit_tea.png' %}" class="mt-5" alt=""></a><a href = {% url 'fruit_tea' %}>
+          <h1 class="mt-3">Фруктовый</h1>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="aboutus container mt-5">
+    <div class="row text-center">
+      <p class="mt-5">20 лет мы занимаемся чаем. Из самых популярных запросов мы
+        составили выбор этого месяца. Ищите и находите нужный
+        чай для разных ситуаций.</p>
+    </div>
+  </div>
+
+
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="h1">
+        <div class="title mt-5">
+          <span>
+            ВЫБОР ЭТОГО МЕСЯЦА
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+  <div class="container prod-mes mb-5">
+    <div class="mt-5 row">
+      <div class="col-12 col-md-4">
+        <div class="tovar-mes mt-4 mx-auto">
+          <a href="{% url 'month_tea' %}">
+            <h1 class="text-center pt-5">“Малина с мятой”</h1>
+          </a>
+          <a href="{% url 'month_tea' %}">
+            <img src=" {% static 'img/mint.png' %}" alt="">
+          </a>
+          <p class="text-center justify-content-center me-4 ms-4">В состав входит каркаде, листья<br> малины, малина,
+            мята, кусочки <br>
+            ананасов, мелисса, кусочки<br>
+            персика, сушенное яблоко.</p>
+          <h2 class="text-center justify-content-center mt-2 pb-4  me-4 ms-4">649₽</h2>
+      </div>
+    </div>
+      <div class="col-12 col-md-4">
+        <div class="tovar-mes mt-4 mx-auto">
+          <a href="{% url 'month_tea' %}">
+            <h1 class="text-center justify-content-center pt-5">“Улун Те Гуань Инь”</h1>
+          </a>
+          <a href="{% url 'month_tea' %}">
+            <img src=" {% static 'img/oolong.png' %}" alt="">
+          </a>
+          <p class="text-center justify-content-cente me-4 ms-4">Удивительный светлый улун ценят<br>
+            за его необыкновенный богатый<br>
+            аромат и неповторимый приятный<br>
+            вкус.</p>
+          <h2 class="text-center justify-content-center mt-2 pb-4  me-4 ms-4">769₽</h2>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="tovar-mes mt-4 mx-auto">
+          <a href="{% url 'month_tea' %}">
+            <h1 class="text-center justify-content-center pt-5">“Анчан”</h1>
+          </a>
+          <a href="{% url 'month_tea' %}">
+            <img src=" {% static 'img/anchan.png' %}" alt="">
+          </a>
+          <p class="text-center justify-content-cente me-4 ms-4">Синий травяной чай, основу<br>
+            которого составляют цветки<br>
+            клитории тройчатой, которые<br>
+            внешне напоминают орхидею.</p>
+          <h2 class="text-center justify-content-center mt-2 pb-4  me-4 ms-4">459₽</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5 ">
+    <div class="row">
+      <div class="h1">
+        <div class="title mt-5">
+          <span>
+            БОНУСНАЯ КАРТА
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class=" bonus container">
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <h2>Получайте скидки, бонусы и
+          многое другое с бонусной картой</h2>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-12 col-12 text-center">
+        <img src=" {% static 'img/bonus_card.png' %}" alt="">
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-12 col-12 text-center my-auto">
+        <a class="btn btn-primary" href=" {% url 'bonus_card' %}" role="button">Подробнее</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,49 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-2 mb-5">
+  <div class="row">
+    <div class="h1">
+      <div class="title mt-5 mb-5">
+        <span>
+          Авторизация
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-md-4 offset-md-4">
+      {% if form.errors %}
+  <p>Неверный пароль или имя пользователя</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+
+  {% else %}
+  {% endif %}
+{% endif %}
+<form method="post" action="{% url 'login' %}" >
+  {% csrf_token %}
+  <div class="form-floating mb-3 mt-5">
+    <input type="text" class="form-control"  placeholder="login" name="{{ form.username.name }}" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" required>
+    <label for="{{ form.username.id_for_label }}">Логин</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="password" class="form-control" placeholder="password" name="{{ form.password.name }}" >
+    <label for="{{ form.password.id_for_label }}">Пароль</label>
+    <p  class='mt-2'><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+  </div>
+  <div class="d-flex  justify-content-center mt-2 mb-3">
+  <button type="submit" class="btn btn-outline-dark">Войти</button>
+</div>
+</form>
+      <input type="hidden" name="next" value="{{ next }}" />
+          <p class="mt-4 reg">Еще нет аккаунта?<a href="{% url 'register' %}"> Зарегистрироваться</a></p>
+    </div>
+  </div>
+</div>
+{% endblock %}

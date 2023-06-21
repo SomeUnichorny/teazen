@@ -1,0 +1,10 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+<h1>Заказ №{{ order.id }} оформлен</h1>
+<h5>Ваш заказ успешно оформлен. Мы свяжемся с вами в ближайшее время для уточнения деталей. Сумма заказа: {{order.total_price}}₽</h5>
+    </div>
+</div>
+{% endblock %}

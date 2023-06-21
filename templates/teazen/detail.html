@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block title %}
+    {% if category %}{{ category.title }}{% else %}Products{% endif %}
+{% endblock %}
+{% block content %}
+<p class="price">${{ product.price }}</p>
+<form action="{% url "cart:cart_add" product.id %}" method="post">
+    {{ cart_product_form }}
+    {% csrf_token %}
+    <input type="submit" value="Add to cart">
+</form>
+{% endblock %}
